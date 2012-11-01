@@ -1,0 +1,1 @@
+../../rule-based/generic_feature_extractor.rb

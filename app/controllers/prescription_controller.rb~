@@ -1,0 +1,8 @@
+class PrescriptionController < ApplicationController
+  def process
+    @prescription = Prescription.new
+#    respond_to do |format|
+#      format.json
+  end
+
+end
