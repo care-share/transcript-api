@@ -2,7 +2,7 @@ class PrescriptionsController < ApplicationController
   respond_to :json
 
   #API posts a JSON object to index...
-  #e.g. curl -d 'prescription[values]={"Medication":"ADVAIR DISKUS 100/50 (FLUTICASONE PROPIONATE/SALMETEROL 100/50)","rollupID":"3622","Route":"INH","Dose":"1","DoseUnits":"PUFF","Strength":"","Take":"","Form":"","Frequency":"daily","PRN":"0","PRNreason":"","Duration":"","DurationUnits":"","Dispensequantity":"1","Dispensequantityunits":"diskus","DIRECTIONS":"do not exceed the prescribed dosage","DiscrepancyExists":"0","Class":null,"ClassDescription":null}' -i localhost:3000/prescriptions/index.json -L
+  #e.g. curl -d 'prescription[values]={"Medication":"ADVAIR DISKUS 100/50 (FLUTICASONE PROPIONATE/SALMETEROL 100/50)","rollupID":"3622","Route":"INH","Dose":"1","DoseUnits":"PUFF","Strength":"","Take":"","Form":"","Frequency":"daily","PRN":"0","PRNreason":"","Duration":"","DurationUnits":"","Dispensequantity":"1","Dispensequantityunits":"diskus","DIRECTIONS":"do not exceed the prescribed dosage"}' -i localhost:3000/prescriptions/index.json -L
   def index
     respond_to do |format|
       format.json {redirect_to :action => "home", :prescription_values => params[:prescription][:values] }
