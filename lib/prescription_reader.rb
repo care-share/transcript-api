@@ -1,1 +1,0 @@
-../../rule-based/prescription_reader.rb

@@ -1,1 +1,0 @@
-../../rule-based/pipeline.rb

@@ -1,1 +1,0 @@
-../../rule-based/generic_classifier.rb
