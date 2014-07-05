@@ -15,7 +15,7 @@ class PrescriptionsController < ApplicationController
     @prescription = Prescription.new
     @prescription.values = JSON.parse(params[:prescription_values])
     reader = PrescriptionObjectReader.new(@prescription)
-    @pipeline = Pipeline.new(:reader => reader, :features => MyFeatures.new, :classifier => AllErrorsClassifier.new)
+    @pipeline = Pipeline.new(reader, [MyFeatures.new, AllErrorsClassifier.new])
     @pipeline.run 1
     @prescription.features = nil # sanitize artifacts other than the input and the decision. make this less kludgey later.
     respond_with(@prescription)
