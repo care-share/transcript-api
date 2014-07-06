@@ -1,5 +1,5 @@
 Api::Application.routes.draw do
-  get "list_pair/align"
+  post "list_pair/align"
 
   get "prescriptions/home"
   post "prescriptions/index"
