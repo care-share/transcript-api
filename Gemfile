@@ -11,6 +11,10 @@ gem 'sqlite3'
 gem 'execjs'
 gem 'therubyracer'
 
+gem 'json'
+gem 'levenshtein'
+gem 'colorize'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
