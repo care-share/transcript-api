@@ -15,13 +15,6 @@ module Api
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Globals specific to the functioning of medication reconciliation
-    DISCREPANCY = "discrepancy"
-    SAME = "same"
-    ADDED = "added"
-    DISCONTINUED = "discontinued"
-    
-    MedAttribFields = ["SIG", "form", "dose", "route", "instructions"]
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
