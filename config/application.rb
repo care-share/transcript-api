@@ -19,6 +19,8 @@ module Api
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W(#{config.root}/lib/rule-based)
     config.autoload_paths += %W(#{config.root}/lib/rule-based/classifiers)
+    config.autoload_paths += %W(#{config.root}/lib/rule-based/medrec)
+    config.autoload_paths += %W(#{config.root}/lib/rule-based/medrec/discrepancy_detectors)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
