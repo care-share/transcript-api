@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
