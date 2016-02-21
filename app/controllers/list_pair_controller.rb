@@ -1,7 +1,15 @@
 # -*- coding: utf-8 -*-
 class ListPairController < ApplicationController
   respond_to :json
-  require "medrec/list_pair_reader_from_string.rb"
+
+  # from TranScript
+  require "medrec/aligner.rb"
+  require "medrec/list_pair_reader.rb"
+  require "medrec/list_pair_prescription_feature_extractor.rb"
+  require "medrec/aligned_list_discrepancy_detector.rb"
+  require "medrec/list_pair_writer.rb"
+  require "medrec/analyst.rb"
+  require "med_order_working/fhir_list_pair_reader_from_string"
 
   before_filter :set_access_control
 
@@ -17,7 +25,7 @@ class ListPairController < ApplicationController
   end
 
   def align #POST
-    reader = ListPairReaderFromString.new(params[:listpair])
+    reader = FHIRListPairReaderFromString.new(params[:listpair])
     pipeline_array = [ListPairPrescriptionFeatureExtractor.new, Aligner.new, \
                       AlignedListStrictStringMatchDiscrepancyDetector.new(["name", "annotation"]), \
                       AlignedListMedAttribMatchDiscrepancyDetector.new, \
