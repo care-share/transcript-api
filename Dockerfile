@@ -80,6 +80,8 @@ RUN bundle install
 # move project files
 COPY . $DIR
 
-# run container
-CMD [ "sleep", "500000" ]
+# run the app as a service
+ENTRYPOINT [ "rails", "server" ]
 
+# override-able arguments for the container
+CMD [ "-p", "3003" ]

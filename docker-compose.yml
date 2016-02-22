@@ -1,3 +1,4 @@
 transcript-api:
   build: .
-
+  ports:
+    - "3003:3003"
