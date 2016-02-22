@@ -68,7 +68,12 @@ ENV DIR /usr/src/app/
 RUN mkdir -p $DIR
 WORKDIR $DIR
 
-# install dependencies
+# install in-house dependencies
+COPY *.gem $DIR
+RUN gem install *.gem
+RUN rx-synonym-setup # the rx-synonym needs to download and install its sqlite knowledge base
+
+# then install publicly available dependencies
 COPY Gemfile* $DIR
 RUN bundle install
 
