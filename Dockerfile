@@ -71,7 +71,9 @@ WORKDIR $DIR
 # install in-house dependencies
 COPY *.gem $DIR
 RUN gem install *.gem
-RUN rx-synonym-setup # the rx-synonym needs to download and install its sqlite knowledge base
+#RUN rx-synonym-setup # the rx-synonym needs to download and install its sqlite knowledge base
+COPY rxnorm.db.bz2 /usr/src/app/
+RUN bzip2 -d rxnorm.db.bz2 && ls -la && rx-synonym-setup -f /usr/src/app/rxnorm.db
 
 # then install publicly available dependencies
 COPY Gemfile* $DIR
