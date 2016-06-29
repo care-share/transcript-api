@@ -83,7 +83,4 @@ RUN bundle install
 COPY . $DIR
 
 # run the app as a service
-ENTRYPOINT [ "rails", "server" ]
-
-# override-able arguments for the container
-CMD [ "-p", "3003" ]
+CMD [ "./start-server.sh" ]
